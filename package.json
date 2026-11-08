@@ -1,0 +1,30 @@
+{
+  "name": "task9",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1",
+    "api": "node --env-file-if-exists=.env server/index.mjs",
+    "typecheck": "next typegen && tsc --noEmit"
+  },
+  "dependencies": {
+    "admin-lte": "4.10.0",
+    "bootstrap-icons": "1.13.2",
+    "express": "^5.0.0",
+    "mysql2": "^3.0.0",
+    "next": "16.4.2",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "6.0.3"
+  }
+}

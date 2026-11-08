@@ -1,0 +1,16 @@
+services:
+  db:
+    image: mysql:8.4
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Configura MYSQL_ROOT_PASSWORD en .env}
+      MYSQL_DATABASE: ${DB_NAME:-task9}
+      MYSQL_USER: ${DB_USER:-task9_app}
+      MYSQL_PASSWORD: ${DB_PASSWORD:?Configura DB_PASSWORD en .env}
+    ports:
+      - "127.0.0.1:${DB_PORT:-33318}:3306"
+    volumes:
+      - task9_data:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/01-task9.sql:ro
+
+volumes:
+  task9_data:
